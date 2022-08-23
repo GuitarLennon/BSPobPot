@@ -2,7 +2,7 @@
 cls;
 capture log close results;
 
-local outputlog = "./temp/" + subinstr("output`c(current_date)'`c(current_time)'.smcl", ":", "_", 99);
+local outputlog = subinstr("./logs/calculoEnigh2_`c(current_date)'`c(current_time)'.smcl", ":", "_", 99);
 local dofraw = "./temp/taberu.xlsx";
 local dofdta = "./temp/dof.dta";
 local dofdta2 = "./temp/dof2.dta";
@@ -11,7 +11,7 @@ local marginacionraw = "./temp/IMM_2020.xls";
 local marginaciondta = "./temp/IMM_2020.dta";
 
 local originalDataset = "./sources/PoblacionA.dta";
-log using "`outputlog'", replace text name(results);
+log using "`outputlog'", replace text;
 di "Iniciando do `c(current_date)' `c(current_time)'";
 cd;
 

@@ -2,7 +2,7 @@ gl bases="./sources"
 gl data="./data"
 gl temp="./temp"
 gl log="./log"
-local outputlog = subinstr("output`c(current_date)'`c(current_time)'.txt", ":", "_", 99)
+local outputlog = subinstr("$log/source - `c(current_date)'`c(current_time)'.txt", ":", "_", 99)
 
 capture log close
 log using "`outputlog'", replace text
