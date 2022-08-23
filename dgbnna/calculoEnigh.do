@@ -3,6 +3,9 @@ cls;
 capture log close results;
 
 local outputlog = subinstr("output`c(current_date)'`c(current_time)'.smcl", ":", "_", 99);
+local dofraw = "taberu.xlsx";
+local dofdta = "dof.dta";
+local dofdta2 = "dof2.dta";
 
 log using "`outputlog'", replace text name(results);
 di "Iniciando do `c(current_date)' `c(current_time)'";
@@ -342,4 +345,10 @@ label values tipoPobl tp;
 svy:total n, over(tipoPobl h_apoyoPrograma1) level(95) cformat(%9.5f);
 svy:tab tipoPobl h_apoyoPrograma1, percent ci;
 
+
+save output.dta;
+
 capture log close results;
+
+
+
